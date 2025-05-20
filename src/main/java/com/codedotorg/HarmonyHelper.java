@@ -9,6 +9,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class HarmonyHelper {
 
@@ -98,12 +100,16 @@ public class HarmonyHelper {
     }
 
     /**
-     * Sorts the instruments in the 'instruments' list based on their names.
-     */
-    public void sortInstruments() {
-        
-
-    }
+        /**
+         * Adds a new instrument to the list and sorts the list.
+         */
+        public void addInstrument(Instrument newInstrument) {
+            if (instruments == null) {
+                instruments = new ArrayList<>();
+            }
+            instruments.add(newInstrument);
+            sortInstruments(); // Ensure the list is sorted after adding
+        }
 
     /**
      * Refreshes the list of instruments displayed in the listView.
